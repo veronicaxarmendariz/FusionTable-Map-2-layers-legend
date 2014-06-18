@@ -81,6 +81,9 @@ var MapsLib = {
 
     MapsLib.searchrecords = null;
 
+    //MODIFY to initial values of the pre-checked polygon?
+    MapsLib.setDemographicsLabels("0&ndash;20%", "20&ndash;40%", "40&ndash;62%");
+
     // MODIFY if needed: defines background polygon1 and polygon2 layers
     MapsLib.polygon1 = new google.maps.FusionTablesLayer({
       query: {
