@@ -232,6 +232,18 @@ var MapsLib = {
     if (MapsLib.searchRadiusCircle != null)
       MapsLib.searchRadiusCircle.setMap(null);
   },
+  
+  setDemographicsLabels: function(left, middle, right) {
+    $('#legend-left').fadeOut('fast', function(){
+      $("#legend-left").html(left);
+    }).fadeIn('fast');
+    $('#legend-middle').fadeOut('fast', function(){
+      $("#legend-middle").html(middle);
+    }).fadeIn('fast');
+    $('#legend-right').fadeOut('fast', function(){
+      $("#legend-right").html(right);
+    }).fadeIn('fast');
+  },
 
   findMe: function() {
     // Try W3C Geolocation (Preferred)
