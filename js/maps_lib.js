@@ -128,11 +128,11 @@ var MapsLib = {
       MapsLib.polygon1.setMap(map);
       MapsLib.setDemographicsLabels("0&ndash;20%", "20&ndash;40%", "40&ndash;62%"); //MODIFY
     }
-    else if ($("#rbPolygon2").is(':checked')) {
+    if ($("#rbPolygon2").is(':checked')) {
       MapsLib.polygon2.setMap(map);
       MapsLib.setDemographicsLabels("0&ndash;7%", "7&ndash;14%", "14&ndash;22%"); //MODIFY
     }
-    else if ($("#rbPolygonOff").is(':checked')) {   //TRY using this designated OFF polygon layer
+    if ($("#rbPolygonOff").is(':checked')) {   //TRY using this designated OFF polygon layer
       MapsLib.polygonOff.setMap(map);
       MapsLib.setDemographicsLabels("&ndash;", "&ndash;", "&ndash;");
     }
