@@ -126,15 +126,12 @@ var MapsLib = {
     // MODIFY if needed: shows background polygon layer depending on which checkbox is selected
     if ($("#rbPolygon1").is(':checked')) {
       MapsLib.polygon1.setMap(map);
-      MapsLib.setDemographicsLabels("0&ndash;20%", "20&ndash;40%", "40&ndash;62%"); //MODIFY
     }
     else if ($("#rbPolygon2").is(':checked')) {
       MapsLib.polygon2.setMap(map);
-      MapsLib.setDemographicsLabels("0&ndash;7%", "7&ndash;14%", "14&ndash;22%"); //MODIFY
     }
     else if ($("#rbPolygonOff").is(':checked')) {   //TRY using this designated OFF polygon layer
       MapsLib.polygonOff.setMap(map);
-      MapsLib.setDemographicsLabels("&ndash;", "&ndash;", "&ndash;");
     }
 
     var address = $("#search_address").val();
@@ -223,10 +220,13 @@ var MapsLib = {
       MapsLib.searchrecords.setMap(null);
     if (MapsLib.polygon1 != null)
       MapsLib.polygon1.setMap(null);
+      MapsLib.setDemographicsLabels("0&ndash;20%", "20&ndash;40%", "40&ndash;62%"); //MODIFY
     if (MapsLib.polygon2 != null)
       MapsLib.polygon2.setMap(null);
+      MapsLib.setDemographicsLabels("0&ndash;7%", "7&ndash;14%", "14&ndash;22%"); //MODIFY
     if (MapsLib.polygonOFF !=null)
       MapsLib.polygonOff.setMap(null);
+      MapsLib.setDemographicsLabels("&ndash;", "&ndash;", "&ndash;");
     if (MapsLib.addrMarker != null)
       MapsLib.addrMarker.setMap(null);
     if (MapsLib.searchRadiusCircle != null)
