@@ -87,10 +87,21 @@
                 </label>
               </li>
             </ul>
-            <h4>
+            <h4>Demographic layers
             <!--MODIFY Polygon layers legend heading, labels (such as Polygon layer 1) to match your data, and related variables in maps_lib.js file -->
               <!--Polygon layers-->
             </h4>
+              <ol id='demographics-legend'>
+		<li id='legend-left'></li>
+		<li id='legend-middle'></li>
+		<li id='legend-right'></li>
+	      </ol>
+		<div class='clear'></div>
+		<!-- <ul class='c3l options-v'>
+			<li><label for='rbCensus1'><input name='rbCensus' type='radio' id='rbCensus1'/>Poverty rate</label></li>
+			<li><label for='rbCensus2'><input name='rbCensus' type='radio' id='rbCensus2'/>Unemployment rate</label></li>
+		</ul>  -->
+          <!-- line between old and new code -->
             <ul class='inputs-list unstyled'>
               <li>
                 <label class='radio inline'>
@@ -106,7 +117,7 @@
               </li>
               <li>
                 <label class='radio inline'>
-                  <input type='radio' name='types' id='rbPolygon0' />
+                  <input type='radio' name='types' id='rbPolygonOff' />
                   Off
                 </label>
               </li>

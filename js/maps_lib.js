@@ -81,6 +81,9 @@ var MapsLib = {
 
     MapsLib.searchrecords = null;
 
+    //MODIFY to initial values of the pre-checked polygon?
+    MapsLib.setDemographicsLabels("0&ndash;20%", "20&ndash;40%", "40&ndash;62%");
+
     // MODIFY if needed: defines background polygon1 and polygon2 layers
     MapsLib.polygon1 = new google.maps.FusionTablesLayer({
       query: {
@@ -109,7 +112,6 @@ var MapsLib = {
     $("#result_box").hide();
     
     //-----custom initializers -- default setting to display Polygon1 layer
-    
     $("#rbPolygon1").attr("checked", "checked"); 
     
     //-----end of custom initializers-------
@@ -124,9 +126,15 @@ var MapsLib = {
     // MODIFY if needed: shows background polygon layer depending on which checkbox is selected
     if ($("#rbPolygon1").is(':checked')) {
       MapsLib.polygon1.setMap(map);
+      MapsLib.setDemographicsLabels("0&ndash;20%", "20&ndash;40%", "40&ndash;62%"); //MODIFY
     }
-    else if ($("#rbPolygon2").is(':checked')) {
+    if ($("#rbPolygon2").is(':checked')) {
       MapsLib.polygon2.setMap(map);
+      MapsLib.setDemographicsLabels("0&ndash;7%", "7&ndash;14%", "14&ndash;22%"); //MODIFY
+    }
+    if ($("#rbPolygonOff").is(':checked')) {   //TRY using this designated OFF polygon layer
+      MapsLib.polygonOff.setMap(map);
+      MapsLib.setDemographicsLabels("&ndash;", "&ndash;", "&ndash;");
     }
 
     var address = $("#search_address").val();
@@ -209,7 +217,7 @@ var MapsLib = {
     MapsLib.searchrecords.setMap(map);
     MapsLib.getCount(whereClause);
   },
-  // MODIFY if you change the number of Polygon layers
+  // MODIFY if you change the number of Polygon layers; TRY designated PolygonOFF layer
   clearSearch: function() {
     if (MapsLib.searchrecords != null)
       MapsLib.searchrecords.setMap(null);
@@ -217,10 +225,24 @@ var MapsLib = {
       MapsLib.polygon1.setMap(null);
     if (MapsLib.polygon2 != null)
       MapsLib.polygon2.setMap(null);
+    if (MapsLib.polygonOFF !=null)
+      MapsLib.polygonOff.setMap(null);
     if (MapsLib.addrMarker != null)
       MapsLib.addrMarker.setMap(null);
     if (MapsLib.searchRadiusCircle != null)
       MapsLib.searchRadiusCircle.setMap(null);
+  },
+  
+  setDemographicsLabels: function(left, middle, right) {
+    $('#legend-left').fadeOut('fast', function(){
+      $("#legend-left").html(left);
+    }).fadeIn('fast');
+    $('#legend-middle').fadeOut('fast', function(){
+      $("#legend-middle").html(middle);
+    }).fadeIn('fast');
+    $('#legend-right').fadeOut('fast', function(){
+      $("#legend-right").html(right);
+    }).fadeIn('fast');
   },
 
   findMe: function() {
