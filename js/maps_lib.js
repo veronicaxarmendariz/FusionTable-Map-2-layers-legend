@@ -132,8 +132,7 @@ var MapsLib = {
       MapsLib.polygon2.setMap(map);
       MapsLib.setDemographicsLabels("0&ndash;7%", "7&ndash;14%", "14&ndash;22%"); //MODIFY
     }
-    if ($("#rbPolygonOff").is(':checked')) {   //TRY using this designated OFF polygon layer
-      MapsLib.polygonOff.setMap(map);
+    if ($("#rbPolygonOff").is(':checked')) {   //the Off statement does not contain a setMap
       MapsLib.setDemographicsLabels("&ndash;", "&ndash;", "&ndash;");
     }
 
