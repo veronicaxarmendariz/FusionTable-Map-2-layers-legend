@@ -7,6 +7,7 @@ a:hover { color: #4B58A6; }
 
 /* remove markers in front of unordered list */
 ul.unstyled {list-style-type:none;}
+ul.radio {list-style-type:none;}
 
 .filter-box { 
   height: 15px; 
