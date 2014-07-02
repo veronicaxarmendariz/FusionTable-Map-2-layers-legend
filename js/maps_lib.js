@@ -30,7 +30,8 @@ var MapsLib = {
   
   polygon1TableID:    "1ceippR4giBiF-pT9PE1YAUvebFp6_NKvYriccYo", //Outline map layer of CT town boundaries
   polygon2TableID:    "1VopQGBhRKyyk25EIA5ptScvULxR68d43RhZ1ycM", //Thematic map layer of selected CT school districts
-
+  polygon3TableID:    "1VopQGBhRKyyk25EIA5ptScvULxR68d43RhZ1ycM",
+  
   //*MODIFY Fusion Tables Requirement* API key. found at https://code.google.com/apis/console/
   //*Important* this key is for demonstration purposes. please register your own.
   googleApiKey:       "AIzaSyDIevSvpV-ONb4Pf15VUtwyr_zZa7ccwq4",
@@ -102,6 +103,15 @@ var MapsLib = {
       styleId: 2,
       templateId: 2
     });
+    
+    MapsLib.polygon3 = new google.maps.FusionTablesLayer({
+      query: {
+        from:   MapsLib.polygon3TableID,
+        select: "geometry"
+      },
+      styleId: 2,
+      templateId: 2
+    });
 
     //reset filters
     $("#search_address").val(MapsLib.convertToPlainString($.address.parameter('address')));
@@ -130,6 +140,10 @@ var MapsLib = {
     }
     if ($("#rbPolygon2").is(':checked')) {
       MapsLib.polygon2.setMap(map);
+      MapsLib.setDemographicsLabels("0&ndash;7%", "7&ndash;14%", "14&ndash;22%"); //MODIFY
+    }
+    if ($("#rbPolygon3").is(':checked')) {
+      MapsLib.polygon3.setMap(map);
       MapsLib.setDemographicsLabels("0&ndash;7%", "7&ndash;14%", "14&ndash;22%"); //MODIFY
     }
     if ($("#rbPolygonOff").is(':checked')) {   //the Off statement does not contain a setMap
@@ -224,6 +238,8 @@ var MapsLib = {
       MapsLib.polygon1.setMap(null);
     if (MapsLib.polygon2 != null)
       MapsLib.polygon2.setMap(null);
+    if (MapsLib.polygon3 != null)
+      MapsLib.polygon3.setMap(null);
     if (MapsLib.polygonOFF !=null)
       MapsLib.polygonOff.setMap(null);
     if (MapsLib.addrMarker != null)
