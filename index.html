@@ -2,7 +2,7 @@
 <html lang='en'>
   <head>
     <!--MODIFY title that appears in web browser tab -->
-    <title>Search-and-Filter Map Template</title>
+    <title>GreatBy8 Search and Filter Map</title>
     <meta charset='utf-8' />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta content='' name='description' />
@@ -25,7 +25,7 @@
             <span class="icon-bar"></span>
           </button>
           <!--MODIFY title of web page, and link destination if desired-->
-          <a class='navbar-brand' href='index.html'>Search-and-Filter Map Template with 2 layers</a>
+          <a class='navbar-brand' href='index.html'>GreatBy8 Search and Filter Map</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -62,57 +62,70 @@
             
             <!--MODIFY Point layer legend heading, labels (such as Interdistrict), and colors (green, blue, yellow, red, purple) to match your data -->
             <h4>
-              Point layer
+              Type of Programs
             </h4>
             <ul class='inputs-list unstyled'>
               <li>
                 <label class='checkbox inline'>
                   <input type='checkbox' id='cbType1' />
                   <span class='filter-box filter-green'></span>
-                  Interdistrict schools  <!--This label can be modified from actual data entry ("Interdistrict") -->
+                  Early Childhood  <!--This label can be modified from actual data entry ("Interdistrict") -->
                 </label>
               </li>
               <li>
                 <label class='checkbox inline'>
                   <input type='checkbox' id='cbType2' />
                   <span class='filter-box filter-blue'></span>
-                  District schools
+                  Schools
                 </label>
               </li>
               <li>
                 <label class='checkbox inline'>
                   <input type='checkbox' id='cbType3' />
                   <span class='filter-box filter-yellow'></span>
-                  More PreK centers
+                  Home Care
+                </label>
+              </li>
+              <li>
+                <label class='checkbox inline'>
+                  <input type='checkbox' id='cbType3' />
+                  <span class='filter-box filter-yellow'></span>
+                  Recreation
+                </label>
+              </li>
+              <li>
+                <label class='checkbox inline'>
+                  <input type='checkbox' id='cbType3' />
+                  <span class='filter-box filter-yellow'></span>
+                  Health
                 </label>
               </li>
             </ul>
-            <h4>Demographic layers
             <!--MODIFY Polygon layers legend heading, labels (such as Polygon layer 1) to match your data, and related variables in maps_lib.js file -->
-              <!--Polygon layers-->
-            </h4>
-              <ol id='demographics-legend'>
-		<li id='legend-left'></li>
-		<li id='legend-middle'></li>
-		<li id='legend-right'></li>
-	      </ol>
+            <h4>Demographic layers</h4>
+            	<ul class='inputs-list unstyled'>
+              	<ol id='demographics-legend'>
+			<li id='legend-left'></li>
+			<li id='legend-middle'></li>
+			<li id='legend-right'></li>
+	      	</ol>
 		<div class='clear'></div>
-		<!-- <ul class='c3l options-v'>
-			<li><label for='rbCensus1'><input name='rbCensus' type='radio' id='rbCensus1'/>Poverty rate</label></li>
-			<li><label for='rbCensus2'><input name='rbCensus' type='radio' id='rbCensus2'/>Unemployment rate</label></li>
-		</ul>  -->
-          <!-- line between old and new code -->
-            <ul class='inputs-list unstyled'>
               <li>
                 <label class='radio inline'>
                   <input type='radio' name='types' id='rbPolygon1' checked />
-                  Polygon layer 1
+                  Children Ages 0-9
                 </label>
               </li>
               <li>
                 <label class='radio inline'>
                   <input type='radio' name='types' id='rbPolygon2' />
-                  Polygon layer 2
+                  Median Household Income
+                </label>
+              </li>
+              <li>
+                <label class='radio inline'>
+                  <input type='radio' name='types' id='rbPolygon3' />
+                  Adults with B.A. or above
                 </label>
               </li>
               <li>
