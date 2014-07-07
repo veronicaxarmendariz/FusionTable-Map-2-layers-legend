@@ -136,15 +136,15 @@ var MapsLib = {
     // MODIFY if needed: shows background polygon layer depending on which checkbox is selected
     if ($("#rbPolygon1").is(':checked')) {
       MapsLib.polygon1.setMap(map);
-      MapsLib.setDemographicsLabels("0&ndash;20%", "20&ndash;40%", "40&ndash;62%"); //MODIFY
+      MapsLib.setDemographicsLabels("150&ndash;350", "350&ndash;650", "650&ndash;825"); //MODIFY
     }
     if ($("#rbPolygon2").is(':checked')) {
       MapsLib.polygon2.setMap(map);
-      MapsLib.setDemographicsLabels("0&ndash;7%", "7&ndash;14%", "14&ndash;22%"); //MODIFY
+      MapsLib.setDemographicsLabels("20&ndash;40%", "40&ndash;60%", "60&ndash;80%"); //MODIFY
     }
     if ($("#rbPolygon3").is(':checked')) {
       MapsLib.polygon3.setMap(map);
-      MapsLib.setDemographicsLabels("0&ndash;7%", "7&ndash;14%", "14&ndash;22%"); //MODIFY
+      MapsLib.setDemographicsLabels("50k&ndash;65k", "65k&ndash;80k%", "80k&ndash;140k"); //MODIFY
     }
     if ($("#rbPolygonOff").is(':checked')) {   //the Off statement does not contain a setMap
       MapsLib.setDemographicsLabels("&ndash;", "&ndash;", "&ndash;");
