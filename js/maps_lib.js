@@ -144,7 +144,7 @@ var MapsLib = {
     }
     if ($("#rbPolygon3").is(':checked')) {
       MapsLib.polygon3.setMap(map);
-      MapsLib.setDemographicsLabels("50k&ndash;65k", "65k&ndash;80k%", "80k&ndash;140k"); //MODIFY
+      MapsLib.setDemographicsLabels("50k&ndash;65k", "65k&ndash;80k", "80k&ndash;140k"); //MODIFY
     }
     if ($("#rbPolygonOff").is(':checked')) {   //the Off statement does not contain a setMap
       MapsLib.setDemographicsLabels("&ndash;", "&ndash;", "&ndash;");
